@@ -9,7 +9,7 @@ It comes with lots of features that make development easier for you.
 
 ## Features
 
-Event calendar with the ability to move, add and edit events
+Event calendar with the ability to move,drag , add and edit events
 
 ## Add event
 ![](assets/gifs/calender1_gif.gif)
@@ -17,8 +17,14 @@ Event calendar with the ability to move, add and edit events
 ## Edit event
 ![](assets/gifs/calender2_gif.gif)
 
+## Flutterap Event Calender
+
 ![](assets/images/calrnder2.png)
+
+## Add event
 ![](assets/images/calrnder3.png)
+
+## Edit event
 ![](assets/images/calrnder4.png)
 
 
