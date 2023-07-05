@@ -1,3 +1,3 @@
 ## 1.0.0
 
-* TODO: Describe initial release.
+Event calendar with the ability to move, add and edit events
