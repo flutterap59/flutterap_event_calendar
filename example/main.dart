@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterap_event_calendar/fx_event_calender/fx_gerogorian_event_calendar.dart';
+import 'package:flutterap_event_calendar/fx_gerogorian_event_calendar.dart';
 
 
 
