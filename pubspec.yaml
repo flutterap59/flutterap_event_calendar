@@ -12,9 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  syncfusion_flutter_calendar: ^21.2.3
-  syncfusion_flutter_core: ^21.2.3
-  syncfusion_flutter_datepicker: ^21.2.3
+  syncfusion_flutter_calendar: '>=21.2.3 <21.2.4'
+  syncfusion_flutter_core: '>=21.2.3 <21.2.4'
+  syncfusion_flutter_datepicker:  '>=21.2.3 <21.2.4'
   flutter_datetime_picker: ^1.5.1
 
 dev_dependencies:
