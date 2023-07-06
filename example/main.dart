@@ -20,7 +20,20 @@ class MyApp extends StatelessWidget {
 
             height: 700,
             child: FxGeogorianEventCalendar(
-              onViewChanged: (details){}
+              onViewChanged: (details){},
+              onAddEvent: (details){},
+              onAppointmentResizeEndCell: (details){},
+              onAppointmentResizeStartCell: (details){},
+              onAppointmentResizeUpdateCell: (details){},
+              onDeleteEvent: (details){},
+              onDragEndCell: (details){},
+              onDragStartCell: (details){},
+              onDragUpdateCell: (details){},
+              onEditEvent: (details){},
+              onLongPressCell: (details){},
+              onSelectionChangedCell: (details){},
+              onTapCell: (details){},
+
 
             )),
       ),
