@@ -1,10 +1,11 @@
 
 <img src="https://github.com/flutterap59/flutterap_event_calendar/raw/main/assets/images/flutterap_logo.png" />
 
-## Flutterap_event_calender
+## flutterap_event_calender
 
 This package is extended from flutterap admin panel Flutterap is a most developer-friendly, highly customizable admin dashboard template based on Flutter. It comes with lots of features that make development easier for you.
 <a href="https://flutterap.com" rel="nofollow">Website : flutterap.com</a>
+##
 
 ## Features
 

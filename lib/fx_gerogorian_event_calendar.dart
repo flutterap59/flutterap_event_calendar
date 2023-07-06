@@ -6,7 +6,38 @@ import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'components/fx_english_date_picker.dart';
 //Event calendar with the ability to move,drag , add and edit events
 class FxGeogorianEventCalendar extends StatefulWidget {
-  const FxGeogorianEventCalendar({Key? key}) : super(key: key);
+  final void Function(CalendarTapDetails)? onTapCell;
+  final void Function(Appointment)? onAddEvent;
+  final void Function(Appointment)? onEditEvent;
+  final void Function(List<Appointment>)? onDeleteEvent;
+  final List<Appointment>? appointmentsList;
+  final void Function(CalendarLongPressDetails)? onLongPressCell;
+  final void Function(AppointmentDragUpdateDetails)? onDragUpdateCell;
+  final void Function(AppointmentDragEndDetails)? onDragEndCell;
+  final void Function(ViewChangedDetails)? onViewChanged;
+  final void Function(AppointmentResizeEndDetails)? onAppointmentResizeEndCell;
+  final void Function(AppointmentResizeStartDetails)? onAppointmentResizeStartCell;
+  final void Function(AppointmentResizeUpdateDetails)? onAppointmentResizeUpdateCell;
+  final void Function(AppointmentDragStartDetails)? onDragStartCell;
+  final void Function(CalendarSelectionDetails)? onSelectionChangedCell;
+
+
+  const FxGeogorianEventCalendar({Key? key,
+  this.onTapCell,
+  this.onAddEvent,
+  this.onDeleteEvent,
+  this.onEditEvent,
+  this.appointmentsList,
+  this.onLongPressCell,
+  this.onDragUpdateCell,
+  this.onDragEndCell,
+  this.onViewChanged,
+  this.onAppointmentResizeEndCell,
+  this.onAppointmentResizeStartCell,
+  this.onAppointmentResizeUpdateCell,
+  this.onDragStartCell,
+  this.onSelectionChangedCell,
+  }) : super(key: key);
 
   @override
   State<FxGeogorianEventCalendar> createState() =>
@@ -96,21 +127,43 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
             _dateAdd = detail.date ?? DateTime.now();
           });
           _addEvent(context);
+          widget.onTapCell!(detail);
         },
         onLongPress: (details) {
           _draggedAppointment = details.appointments!.first;
           _newAppointmentDate = details.date!;
           setState(() {});
+          widget.onLongPressCell!(details);
         },
         onDragUpdate: (details) {
           // _newAppointmentDate = details.date;
           setState(() {});
+          widget.onDragUpdateCell!(details);
         },
         onDragEnd: (details) {
           _draggedAppointment.startTime =
               _newAppointmentDate.subtract(const Duration(hours: 1));
           _draggedAppointment.endTime = _newAppointmentDate;
           setState(() {});
+          widget.onDragEndCell!(details);
+        },
+        onViewChanged: (details){
+          widget.onViewChanged!(details);
+        },
+        onAppointmentResizeEnd: (details){
+          widget.onAppointmentResizeEndCell!(details);
+        },
+        onAppointmentResizeStart: (details){
+          widget.onAppointmentResizeStartCell!(details);
+        },
+        onAppointmentResizeUpdate: (details){
+          widget.onAppointmentResizeUpdateCell!(details);
+        },
+        onDragStart:  (details){
+          widget.onDragStartCell!(details);
+        },
+        onSelectionChanged:  (details){
+          widget.onSelectionChangedCell!(details);
         },
       ),
     );
@@ -207,7 +260,7 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
   }
 
   _DataSource _getDataSource() {
-    return _DataSource(_appointments);
+    return _DataSource(widget.appointmentsList??_appointments);
   }
 
   //Add Event Dialog by press on day cell
@@ -255,6 +308,7 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
                           subject: _addController.text,
                         ),
                       );
+
                       _addController.text = "";
                     });
 
@@ -276,6 +330,12 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
                 subject: _addController.text,
                 color: const Color(0xff3761EB)),
           );
+
+          widget.onAddEvent!(Appointment(
+              startTime: _dateAdd,
+              endTime: _dateAdd.add(const Duration(hours: 1)),
+              subject: _addController.text,
+              color: const Color(0xff3761EB)),);
         }
 
         _addController.text = "";
@@ -315,6 +375,8 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
                         editDate ?? _date;
                     _appointments[_getAppointmentIndex(id)].endTime =
                         (editDate ?? _date).add(const Duration(hours: 1));
+
+                    widget.onEditEvent!(_appointments[_getAppointmentIndex(id)]);
                     Navigator.pop(context);
                   },
                 ),
@@ -329,6 +391,7 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
                         _appointments
                             .remove(_appointments[_getAppointmentIndex(id)]);
                         setState(() {});
+                        widget.onDeleteEvent!(_appointments);
                         Navigator.pop(context);
                       },
                       child: const Icon(
@@ -341,6 +404,7 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
                       onPressed: () {
                         _appointments[_getAppointmentIndex(id)].subject =
                             _editController.text;
+                        widget.onEditEvent!(_appointments[_getAppointmentIndex(id)]);
                         Navigator.pop(context);
                       },
                     )
