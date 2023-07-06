@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 import 'components/fx_english_date_picker.dart';
-
+//Event calendar with the ability to move,drag , add and edit events
 class FxGeogorianEventCalendar extends StatefulWidget {
   const FxGeogorianEventCalendar({Key? key}) : super(key: key);
 
@@ -210,6 +210,7 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
     return _DataSource(_appointments);
   }
 
+  //Add Event Dialog by press on day cell
   Future<dynamic> _addEvent(BuildContext context) {
     return showDialog(
       context: context,
@@ -282,6 +283,7 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
     });
   }
 
+  //Edit Event Dialog by press on event
   Future<dynamic> _editEvent(BuildContext context, int id) {
     return showDialog(
       context: context,
@@ -356,6 +358,7 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
     });
   }
 
+  //Get Appointment Index
   int _getAppointmentIndex(int id) {
     int appointmentIndex = 0;
 
@@ -367,6 +370,8 @@ class _FxGeogorianEventCalendarState extends State<FxGeogorianEventCalendar> {
     return appointmentIndex;
   }
 
+
+  //Show More Events
   Future<dynamic> _showMoreEvents(
       BuildContext context, CalendarAppointmentDetails details) {
     return showDialog(
