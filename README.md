@@ -1,5 +1,5 @@
 
-![](assets/images/flutterap_logo.png)
+<img src="https://github.com/flutterap59/flutterap_breadcrumb/raw/main/assets/images/flutterap_logo.png" />
 
 ## Flutterap_event_calender
 This package is extended from flutterap admin panel
@@ -12,23 +12,26 @@ It comes with lots of features that make development easier for you.
 Event calendar with the ability to move,drag , add and edit events
 
 ## Add event
-![](assets/gifs/calender1_gif.gif)
+<img src="https://github.com/flutterap59/flutterap_breadcrumb/raw/main/assets/gifs/calender1_gif.gif" />
+
 
 ## Edit event
-![](assets/gifs/calender2_gif.gif)
+<img src="https://github.com/flutterap59/flutterap_breadcrumb/raw/main/assets/gifs/calender2_gif.gif" />
+
 
 ## Flutterap Event Calender
+<img src="https://github.com/flutterap59/flutterap_breadcrumb/raw/main/assets/images/calrnder2.png" />
 
-![](assets/images/calrnder2.png)
 
 ## Add event
-![](assets/images/calrnder3.png)
+<img src="https://github.com/flutterap59/flutterap_breadcrumb/raw/main/assets/images/calrnder3.png" />
+
 
 ## Edit event
-![](assets/images/calrnder4.png)
+<img src="https://github.com/flutterap59/flutterap_breadcrumb/raw/main/assets/images/calrnder4.png" />
 
 
-
+## Usage
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key,});
