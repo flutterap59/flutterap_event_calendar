@@ -48,18 +48,18 @@ class MyApp extends StatelessWidget {
             height: 700,
             child: FxGeogorianEventCalendar(
               onViewChanged: (details){},
+              onTapCell: (details){},
               onAddEvent: (details){},
+              onEditEvent: (details){},
+              onDeleteEvent: (details){},
               onAppointmentResizeEndCell: (details){},
               onAppointmentResizeStartCell: (details){},
               onAppointmentResizeUpdateCell: (details){},
-              onDeleteEvent: (details){},
               onDragEndCell: (details){},
               onDragStartCell: (details){},
               onDragUpdateCell: (details){},
-              onEditEvent: (details){},
               onLongPressCell: (details){},
               onSelectionChangedCell: (details){},
-              onTapCell: (details){},
 
 
             )),
@@ -68,4 +68,25 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+
+### Functions
+
+| Name       	        | Description                         	                      |
+|---------------------|------------------------------------------------------------|
+| onViewChanged 	            | Called when Event Calendar page is changed into new month. |
+| onTapCell	 	 | Called when clicking on the day cell. 	                    |
+| onAddEvent	 	 | Called when an event is added.                             |
+| onDeleteEvent	 	 | Called when an event is deleted.                           |
+| onEditEvent	 	    | Called when an event is edited.	                           |
+| onAppointmentResizeEndCell	 	   | Called when appointment cell resizing ends.	               |
+| onAppointmentResizeStartCell	 	    | Called when appointment cell resizing starts.	             |
+| onAppointmentResizeUpdateCell	 	  | Called when appointment cell resizing updates. 	           |
+| onDragEndCell 	            | Called when appointment cell draging ends.                        |
+| onDragStartCell	 	 | Called when appointment cell draging starts.       	              |
+| onDragUpdateCell	 	   | Called when appointment cell draging updates.       	             |
+| onLongPressCell	 	  | Called when long pressing on the day cell.  	              |
+| onSelectionChangedCell	 	  | Called when selecting on the day cell. 	 	                 |
+
+
 
