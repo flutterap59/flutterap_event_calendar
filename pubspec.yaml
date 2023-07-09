@@ -1,6 +1,6 @@
 name: flutterap_event_calendar
 description: Event calendar with the ability to move,drag , add and edit events
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/flutterap59/flutterap_event_calendar
 
 environment:
@@ -12,9 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  syncfusion_flutter_calendar: 21.2.3
-  syncfusion_flutter_core: 21.2.3
-  syncfusion_flutter_datepicker:  21.2.3
+  syncfusion_flutter_calendar: ^21.2.3
+  syncfusion_flutter_core: ^21.2.3
+  syncfusion_flutter_datepicker:  ^21.2.3
   flutter_datetime_picker: ^1.5.1
 
 dev_dependencies:

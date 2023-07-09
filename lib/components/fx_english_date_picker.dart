@@ -47,15 +47,7 @@ class _FxEnglishDatePicker extends State<FxEnglishDatePicker> {
                 showTitleActions: true,
                 minTime: widget.minTime ?? DateTime(1800, 1, 1),
                 maxTime: widget.maxTime ?? DateTime(2040, 12, 31),
-                theme:  DatePickerTheme(
-                    headerColor: Colors.grey,
-                    backgroundColor: Colors.white,
-                    itemStyle: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
-                    doneStyle:
-                    TextStyle(color: Colors.white, fontSize: 16)),
+
                 onChanged: (date) {}, onConfirm: (date) {
                   setState(() {
                     _data = date.toLocal();
