@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'src/date_model.dart';
 import 'src/i18n_model.dart';
 
-
-
 typedef DateChangedCallback = Function(DateTime time);
 typedef DateCancelledCallback = Function();
 typedef StringAtIndexCallBack = String? Function(int index);
@@ -19,13 +17,13 @@ class DatePicker {
   ///
   static Future<DateTime?> showDatePicker(
     BuildContext context, {
-    bool showTitleActions= true,
+    bool showTitleActions = true,
     DateTime? minTime,
     DateTime? maxTime,
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale= LocaleType.en,
+    locale = LocaleType.en,
     DateTime? currentTime,
     DatePickerTheme? theme,
   }) async {
@@ -55,12 +53,12 @@ class DatePicker {
   ///
   static Future<DateTime?> showTimePicker(
     BuildContext context, {
-    bool showTitleActions= true,
-    bool showSecondsColumn= true,
+    bool showTitleActions = true,
+    bool showSecondsColumn = true,
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale= LocaleType.en,
+    locale = LocaleType.en,
     DateTime? currentTime,
     DatePickerTheme? theme,
   }) async {
@@ -89,11 +87,11 @@ class DatePicker {
   ///
   static Future<DateTime?> showTime12hPicker(
     BuildContext context, {
-    bool showTitleActions= true,
+    bool showTitleActions = true,
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale= LocaleType.en,
+    locale = LocaleType.en,
     DateTime? currentTime,
     DatePickerTheme? theme,
   }) async {
@@ -121,13 +119,13 @@ class DatePicker {
   ///
   static Future<DateTime?> showDateTimePicker(
     BuildContext context, {
-    bool showTitleActions= true,
+    bool showTitleActions = true,
     DateTime? minTime,
     DateTime? maxTime,
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale= LocaleType.en,
+    locale = LocaleType.en,
     DateTime? currentTime,
     DatePickerTheme? theme,
   }) async {
@@ -157,11 +155,11 @@ class DatePicker {
   ///
   static Future<DateTime?> showPicker(
     BuildContext context, {
-    bool showTitleActions= true,
+    bool showTitleActions = true,
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale= LocaleType.en,
+    locale = LocaleType.en,
     BasePickerModel? pickerModel,
     DatePickerTheme? theme,
   }) async {
@@ -194,9 +192,11 @@ class _DatePickerRoute<T> extends PopupRoute<T> {
     RouteSettings? settings,
     BasePickerModel? pickerModel,
   })  : pickerModel = pickerModel ?? DatePickerModel(),
-        theme = theme ?? DatePickerTheme(
-          data: const DatePickerThemeData(),
-          child: Container(),),
+        theme = theme ??
+            DatePickerTheme(
+              data: const DatePickerThemeData(),
+              child: Container(),
+            ),
         super(settings: settings);
 
   final bool? showTitleActions;
@@ -350,9 +350,11 @@ class _DatePickerState extends State<_DatePickerComponent> {
     return Expanded(
       flex: layoutProportion,
       child: Container(
-        padding: EdgeInsets.all(8),
-        height: 80*3,
-        decoration: BoxDecoration(color: Colors.white,),
+        padding: const EdgeInsets.all(8),
+        height: 80 * 3,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
         child: NotificationListener(
           onNotification: (ScrollNotification notification) {
             if (notification.depth == 0 &&
@@ -384,9 +386,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
                 alignment: Alignment.center,
                 child: Text(
                   content,
-                  style: TextStyle(fontSize: 20),
-            
-                  
+                  style: const TextStyle(fontSize: 20),
                 ),
               );
             },
@@ -477,7 +477,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
 
     return Container(
       height: 40,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.black,
       ),
       child: Row(
@@ -487,12 +487,13 @@ class _DatePickerState extends State<_DatePickerComponent> {
             height: 40,
             child: CupertinoButton(
               pressedOpacity: 0.3,
-              padding: EdgeInsetsDirectional.only(start: 16, top: 0),
+              padding: const EdgeInsetsDirectional.only(start: 16, top: 0),
               child: Text(
                 cancel,
-                style: TextStyle(fontSize: 16
-                  , color: Colors.black,),
-
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -506,11 +507,13 @@ class _DatePickerState extends State<_DatePickerComponent> {
             height: 40,
             child: CupertinoButton(
               pressedOpacity: 0.3,
-              padding: EdgeInsetsDirectional.only(end: 16, top: 0),
+              padding: const EdgeInsetsDirectional.only(end: 16, top: 0),
               child: Text(
                 done,
-                style: TextStyle(fontSize: 16, color: Colors.black,),
-
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
               ),
               onPressed: () {
                 Navigator.pop(context, widget.pickerModel.finalTime());
@@ -544,6 +547,7 @@ class _BottomPickerLayout extends SingleChildLayoutDelegate {
   });
 
   final double progress;
+
   // final int? itemCount;
   final bool? showTitleActions;
   final DatePickerTheme theme;
@@ -551,7 +555,7 @@ class _BottomPickerLayout extends SingleChildLayoutDelegate {
 
   @override
   BoxConstraints getConstraintsForChild(BoxConstraints constraints) {
-    double maxHeight = 80*3;
+    double maxHeight = 80 * 3;
     if (showTitleActions == true) {
       maxHeight += 40;
     }

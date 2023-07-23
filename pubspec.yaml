@@ -1,10 +1,10 @@
 name: flutterap_event_calendar
 description: Event calendar with the ability to move,drag , add and edit events
-version: 1.0.6
+version: 1.0.7
 homepage: https://github.com/flutterap59/flutterap_event_calendar
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
+  sdk: '>=3.0.5 <4.0.0'
   flutter: ">=1.17.0"
 
 

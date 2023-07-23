@@ -7,6 +7,9 @@ This package is extended from flutterap admin panel Flutterap is a most develope
 <a href="https://flutterap.com" rel="nofollow">Website : flutterap.com</a>
 ##
 
+<a href="https://www.flutterap.com/features" rel="nofollow"><img src="https://github.com/flutterap59/flutterap_event_calendar/raw/main/assets/images/contact_us.png" /></a>
+##
+
 ## Features
 
 Event calendar with the ability to move,drag , add and edit events
